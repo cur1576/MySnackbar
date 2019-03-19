@@ -1,5 +1,6 @@
 package com.example.mysnackbar;
 
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
         final TextView tv = findViewById(R.id.tv);
         forUndo = tv.getText().toString();
         tv.setText("");
-        Snackbar sb = Snackbar.make(findViewById(R.id.coordinatorLayout),"Rückgangig",Snackbar.LENGTH_LONG);
+        CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinatorLayout);
+        coordinatorLayout.dispatchDependentViewsChanged(findViewById(R.id.constraintLayout));
+        Snackbar sb = Snackbar.make(coordinatorLayout,"Rückgangig",Snackbar.LENGTH_LONG);
         sb.setAction("Undo", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
