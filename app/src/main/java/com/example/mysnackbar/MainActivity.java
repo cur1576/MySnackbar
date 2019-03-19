@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView tv = findViewById(R.id.tv);
         forUndo = tv.getText().toString();
         tv.setText("");
-        Snackbar sb = Snackbar.make(findViewById(R.id.constraintLayout),"Rückgangig",Snackbar.LENGTH_LONG);
+        Snackbar sb = Snackbar.make(findViewById(R.id.coordinatorLayout),"Rückgangig",Snackbar.LENGTH_LONG);
         sb.setAction("Undo", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
